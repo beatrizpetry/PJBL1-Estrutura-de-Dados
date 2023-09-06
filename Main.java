@@ -2,20 +2,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[][] matriz = {
-            {1, 1, 1, 1, 1, 1, 1, 1, 1, 0},
-            {1, 1, 1, 1, 1, 1, 1, 1, 0, 1},
-            {1, 1, 1, 1, 1, 1, 1, 0, 1, 1},
-            {1, 1, 1, 1, 1, 1, 0, 1, 1, 1},
-            {1, 1, 1, 1, 1, 0, 1, 1, 1, 1},
-            {1, 1, 1, 1, 0, 1, 1, 1, 1, 1},
-            {1, 1, 1, 0, 1, 1, 1, 1, 1, 1},
-            {1, 1, 0, 1, 1, 1, 1, 1, 1, 1},
-            {1, 0, 1, 1, 1, 1, 1, 1, 1, 1},
-            {0, 1, 1, 1, 1, 1, 1, 1, 1, 1}
-        };
-
-
         System.out.print("===== PJBL1 - Estrutura de Dados =====");
         System.out.println();
         System.out.print("Beatriz Petry, Julia Engels e Mariana Camily");
@@ -28,7 +14,6 @@ public class Main {
             if (resposta == 1) {
                 System.out.print("===== Opção Selecionada: Fila =====");
                 System.out.println();
-                FloodFillFila fillFila = new FloodFillFila(matriz);
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Digite a linha inicial (0-9): ");
                 int startX = scanner.nextInt();
@@ -36,14 +21,13 @@ public class Main {
                 int startY = scanner.nextInt();
                 System.out.print("Digite o novo valor: ");
                 int newValue = scanner.nextInt();
-        
-                fillFila.floodFill(matriz, startX, startY, newValue);
-                fillFila.printImage(matriz);
+                FloodFillFila.floodFillFila(Matriz.matriz, startX, startY, newValue);
+                FloodFillFila.printImage(Matriz.matriz);
             }
             else if (resposta == 2){
                 System.out.print("===== Opção Selecionada: Pilha =====");
                 System.out.println();
-                FloodFillPilha fillPilha = new FloodFillPilha(matriz);
+                FloodFillPilha fillPilha = new FloodFillPilha(Matriz.matriz);
                 Scanner scanner = new Scanner(System.in);
                 System.out.print("Digite a linha inicial (0-9): ");
                 int startX = scanner.nextInt();
